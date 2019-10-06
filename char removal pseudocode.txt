@@ -1,0 +1,28 @@
+
+        DECLARE RemovalChar : Char
+        DECLARE Finalstring : String
+        DECLARE  Counter : Integer
+	DECLARE Inputstring
+
+        Inputstring = ""
+        RemovalChar = ""
+        Finalstring = ""
+        Counter = 0
+
+
+        OUTPUT "Enter string : "
+        INPUT Inputstring
+
+        OUTPUT "Enter character to be removed from string : "
+        INPUT RemovalChar
+
+
+        For Counter = 1 To LENGTH(Inputstring)
+            If MID(Inputstring, Counter, 1) <> RemovalChar 
+		Then
+                  Finalstring = Finalstring & MID(Inputstring,      			 Counter, 1)
+            End If
+
+        Next
+        OUTPUT Finalstring
+        
