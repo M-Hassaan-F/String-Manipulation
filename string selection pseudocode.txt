@@ -1,0 +1,27 @@
+ 	DECLARE firstSTR : String
+        DECLARE SecondSTR : String
+        DECLARE spacepos : Integer
+        DECLARE Fname : String
+        DECLARE Lname : String
+
+        firstSTR = ""
+        SecondSTR = ""
+        spacepos = 0
+        Fname = ""
+        Lname = ""
+
+
+
+        OUTPUT "Enter first string: "
+        INPUT firstSTR
+
+        OUTPUT "enter second string: "
+        INPUT SecondSTR
+
+        spacepos = LOCATE(firstSTR, " ")
+        Fname = LEFT(firstSTR, spacepos)
+
+        spacepos = LOCATE(SecondSTR, " ")
+        Lname = MID(SecondSTR, spacepos + 1, LENGTH(SecondSTR))
+
+        OUTPUT Fname & Lname
