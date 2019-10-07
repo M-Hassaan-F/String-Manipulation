@@ -1,5 +1,5 @@
 
-        DECLARE RemovalChar : Char
+        DECLARE RemovalChar : Character
         DECLARE Finalstring : String
         DECLARE  Counter : Integer
 	DECLARE Inputstring
@@ -20,9 +20,9 @@
         For Counter = 1 To LENGTH(Inputstring)
             If MID(Inputstring, Counter, 1) <> RemovalChar 
 		Then
-                  Finalstring = Finalstring & MID(Inputstring,      			 Counter, 1)
+                  Finalstring = Finalstring & MID(Inputstring, counter, 1)
             End If
 
-        Next
+        Endfor
         OUTPUT Finalstring
         
