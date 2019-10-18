@@ -1,0 +1,31 @@
+DECLARE count : INTEGER
+DECLARE digit : INTEGER
+DECLARE alpha : INTEGER
+DECLARE STR : STRING
+DECLARE NextChar : CHAR
+
+STR = ""
+NextChar = ''
+digit = 0
+alpha = 0
+count = 0
+
+OUTPUT "enter string"
+INPUT STR
+
+FOR count = 1 TO LENGTH(STR)
+    NextChar = MID(STR, count, 1)
+    NextChar = UCASE(NextChar)
+    IF ASC(NextChar) >= 65 AND ASC(NextChar) <= 90
+      THEN
+        alpha = alpha + 1
+      ELSE IF ASC(NextChar) >= 47 AND ASC(NextChar) <= 57
+             THEN 
+               digit = digit + 1
+           ENDIF
+    ENDIF 
+ENDFOR
+
+OUTPUT "Number of digits: ", digit
+OUTPUT "Number of alphabets: ", alpha	     
+	
