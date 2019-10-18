@@ -1,0 +1,30 @@
+DECLARE vowels : STRING
+DECLARE STR : STRING
+DECLARE NextChar : CHARACTER
+DECLARE NextCharSTR :CHARACTER
+DECLARE vcount : INTEGER
+DECLARE count : INTEGER
+DECLARE count2 = INTEGER
+
+vowels = "aeiou"
+STR = ""
+NextChar = ''
+NextCharSTR = ''
+count = 0
+count2 = 0
+vcount = 0
+
+OUTPUT "Enter string: "
+INPUT STR
+
+FOR count = 1 TO LENGTH(vowels)
+    NextChar = MID(vowels, count, 1)
+    FOR count2 = LENGTH(STR)
+	NextCharSTR = MID(STR, count2, 1)
+	IF NextCharSTR = NextChar
+	  THEN vcount = vcount + 1
+	ENDIF
+    ENDFOR
+ENDFOR
+
+OUTPUT "Number of vowels: ", vcount
