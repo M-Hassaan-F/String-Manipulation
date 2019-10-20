@@ -1,0 +1,54 @@
+DECLARE STR1 : STRING
+DECLARE STR2 : STRING
+DECLARE STR3 : STRING
+DECLARE NextChar : CHARACTER
+DECLARE NextChar2 : CHARACTER
+DECLARE HasChanged : BOOLEAN
+DECLARE C1 : INTEGER
+DECLARE C2 : INTEGER
+
+STR1 = ""
+STR2 = ""
+STR3 = ""
+NextChar = ''
+NextChar2 = ''
+HasChanged = FALSE
+C1 = 0
+C2 = 0
+
+OUTPUT "Enter first string: "
+INPUT STR1
+STR1 = UPPER(STR1)
+ 
+OUTPUT "Enter second string: "
+INPUT STR2
+STR2 = UPPER(STR2)
+
+IF LENGTH(STR1) = LENGTH(STR2)
+  THEN
+    FOR C1 = 1 TO LENGTH(STR1)
+        NextChar = MID(STR1, C1, 1)
+        STR3 = ""
+        HasChanged = FALSE
+	FOR C2 = 1 TO LENGTH(STR2)
+            NextChar2 = MID(STR2, C2, 1)
+            IF NextChar = NextChar2 AND HasChanged = FALSE
+     	      THEN
+                HasChanged = TRUE
+              ELSE
+                STR3 = STR3 & NextChar2
+            ENDIF
+        ENDFOR
+        STR2 = STR3
+    ENDFOR  
+    IF STR2 = " "
+      THEN 
+        OUTPUT "Strings are anagrams"
+      ELSE 
+        OUTPUT "Strings are not anagrams"
+    ENDIF
+  ELSE
+    OUTPUT "Strings are not anagrams"
+ENDIF  
+             
+            
