@@ -1,0 +1,34 @@
+DECLARE alphabets : STRING
+DECLARE STR1 : STRING
+DECLARE NextChar : CHARACTER
+DECLARE NextChar2 : CHARACTER
+DECLARE IsPangram : BOOLEAN
+DIM C1 : INTEGER
+DIM C2 : INTEGER
+
+alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+STR1 = ""
+NextChar = ""
+NextChar2 = ""
+IsPangram = TRUE
+C1 = 0
+C2 = 0
+
+OUTPUT "Enter string: "
+INPUT STR1
+STR1 = UPPER(STR1)
+
+FOR C1 = 1 TO LENGTH(alphabets)
+    NextChar = MID(alphabets, C1, 1)
+    IF LOCATE(STR1, NextChar)
+       IsPangram = FALSE
+       EXIT FOR
+    ENDIF
+ENDFOR
+
+IF IsPangram = TRUE
+  THEN
+    OUPUT "String is a pangram"
+  ELSE
+    OUTPUT "string is not pangram
+ENDIF
